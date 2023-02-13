@@ -1,0 +1,11 @@
+.priorityTab {
+  background: url(./img/background_leaves.webp);
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.priorityTab2 {
+  background: url(./img/background_leaves.jpg);
+  background-repeat: no-repeat;
+  background-size: auto;
+}
