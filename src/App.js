@@ -37,10 +37,8 @@ function BottomForm({ handleAddTask, handleDeleteAllTasks }) {
 
   return (
     <>
-      <Container className='my-3'>
-        <Row>
-          <Col xs={4}>
-            <Card>
+          <Col className='mt-3' xs={12} sm={12} md={6} lg={4}>
+            <Card style={{margin: 'auto'}}>
               <Card.Header className='p-3' style={{backgroundColor: '#87A96B', color: 'white'}}>
                 <h5>Add New Task</h5>
               </Card.Header>
@@ -80,8 +78,6 @@ function BottomForm({ handleAddTask, handleDeleteAllTasks }) {
               </Card.Body>
             </Card>
           </Col>
-        </Row>
-      </Container>
     </>
   );
 }
@@ -148,7 +144,7 @@ function Priority({ priority, tasks, handleDeleteTask }) {
   );
 }
 
-function TaskTable({ tasks, handleDeleteTask }) {
+function TaskTable({ tasks, handleDeleteTask, handleAddTask, handleDeleteAllTasks }) {
 
   let high = tasks.filter(task => task.priority === 1);
   let medium = tasks.filter(task => task.priority === 2);
@@ -158,8 +154,8 @@ function TaskTable({ tasks, handleDeleteTask }) {
   return (
     <Container>
       <Row>
-        <Col>
-          <Card className='mt-3 priorityTab' style={{width: '22rem'}}>
+        <Col xs={12} sm={12} md={6} lg={4}>
+          <Card className='mt-3 priorityTab' style={{margin: 'auto'}}>
             <Card.Body className='shadow'>
               <Card.Title>
                 <Priority priority={'High Priority'} tasks={high} handleDeleteTask={handleDeleteTask} />
@@ -167,8 +163,8 @@ function TaskTable({ tasks, handleDeleteTask }) {
             </Card.Body>
           </Card>
         </Col>
-        <Col>
-          <Card className='mt-3 priorityTab2' style={{width: '22rem'}}>
+        <Col xs={12} sm={12} md={6} lg={4}>
+          <Card className='mt-3 priorityTab2' style={{margin: 'auto'}}>
             <Card.Body className='shadow'>
               <Card.Title>
                 <Priority priority={'Medium Priority'} tasks={medium} handleDeleteTask={handleDeleteTask} />
@@ -176,8 +172,8 @@ function TaskTable({ tasks, handleDeleteTask }) {
             </Card.Body>
           </Card>
         </Col>
-        <Col>
-          <Card className='mt-3 priorityTab' style={{width: '22rem'}}>
+        <Col xs={12} sm={12} md={6} lg={4}>
+          <Card className='mt-3 priorityTab' style={{margin: 'auto'}}>
             <Card.Body className='shadow'>
               <Card.Title>
                 <Priority priority={'Low Priority'} tasks={low} handleDeleteTask={handleDeleteTask} />
@@ -185,6 +181,7 @@ function TaskTable({ tasks, handleDeleteTask }) {
             </Card.Body>
           </Card>
         </Col>
+        <BottomForm handleAddTask={handleAddTask} handleDeleteAllTasks={handleDeleteAllTasks} />
       </Row>
     </Container>
   );
@@ -221,8 +218,10 @@ function ToDoList() {
   return (
     <div>
       <Title />
-      <TaskTable tasks={listOfTasks} handleDeleteTask={handleDeleteTask} />
-      <BottomForm handleAddTask={handleAddTask} handleDeleteAllTasks={handleDeleteAllTasks} />
+      <TaskTable tasks={listOfTasks}
+                 handleDeleteTask={handleDeleteTask}
+                 handleAddTask={handleAddTask}
+                 handleDeleteAllTasks={handleDeleteAllTasks}/>
     </div>
   )
 }
@@ -233,6 +232,5 @@ export default function App() {
 
 /*
 3. po dodaniu taska pole ma sie wyczyscic
-7. bootstrap - react-bootstrap
 5. Ptaszek zamiast TASK COMPLETED
 */
