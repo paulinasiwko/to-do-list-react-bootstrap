@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { Button, Card, Container } from "react-bootstrap";
 import { FaCheck, FaPencilAlt, FaSave } from "react-icons/fa";
+import './task-row.css';
 
 export default function TaskRow({ singleTask, handleDeleteTask }) {
     const [hover, setHover] = useState({display: 'none'});
@@ -15,8 +16,7 @@ export default function TaskRow({ singleTask, handleDeleteTask }) {
         <Container
             onPointerEnter={e => setHover({display: 'block'})}
             onPointerLeave={e => setHover({display: 'none'})}>
-            <Card className='mt-3'
-                  style={{backgroundColor: '#d6e6cb'}}>
+            <Card className='mt-3 taskRowColor'>
                 <Card.Body>
                     {isEditing ? (
                         <input defaultValue={editedTask}

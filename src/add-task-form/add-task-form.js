@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { Button, Card, Col, Form, FormGroup } from "react-bootstrap";
+import './add-task-form.css';
 
 export default function AddTaskForm({ handleAddTask, handleDeleteAllTasks }) {
     const [newTask, setNewTask] = useState({
@@ -38,9 +39,8 @@ export default function AddTaskForm({ handleAddTask, handleDeleteAllTasks }) {
     return (
         <>
             <Col className='mt-3' xs={12} md={6} lg={4}>
-                <Card style={{margin: 'auto'}}>
-                    <Card.Header className='p-3'
-                                 style={{backgroundColor: '#87A96B', color: 'white'}}>
+                <Card className='m-auto'>
+                    <Card.Header className='p-3 header'>
                         <h5>Add New Task</h5>
                     </Card.Header>
                     <Card.Body className='shadow'>

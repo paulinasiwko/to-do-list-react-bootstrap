@@ -4,8 +4,7 @@ import React from "react";
 export default function SinglePriorityCard ({ priorityType, taskType, handleDeleteTask }) {
     return (
                 <Col xs={12} md={6} lg={4}>
-                    <Card className='mt-3 priorityTab'
-                          style={{margin: 'auto'}}>
+                    <Card className='mt-3 m-auto priorityTab'>
                         <Card.Body className='shadow'>
                             <Card.Title>
                                 <Priority priority={priorityType}
